@@ -83,12 +83,17 @@ The project relies on microdata extraction segments spanning six consecutive qua
 
 Some of the features include:
 * **Automated Multi-Quarter Batch Ingestion:** Seamlessly reads and extracts multi-sheet Excel workbooks across multiple quarters.
+  
 * **Robust Data Cleaning and Harmonization:** Programmatically resolves string inconsistencies, whitespaces, and country name variations (e.g., unifying 'United Sta' and 'The United States').
+  
 * **HS Chapter 27 Commodity Filtering:** Automatically isolates mineral fuels and petroleum oils.
+  
 * **Advanced Market Concentration Metrics:** Computes Herfindahl-Hirschman Index (HHI) scores and cumulative Pareto shares to evaluate monopoly risks.
+  
 * **Automated Visualization Pipeline:** Generates professional comparative bar charts and longitudinal trend lines using Matplotlib.
 
 ## Python Concept Implemented
+
 * **Data Structures:** Lists, dictionaries, and structured pandas DataFrames.
 * **Data Manipulation:** Slicing, grouping (.groupby()), merging (.pd.merge()), string methods (.str.title(), .str.replace()), and handling missing values (.ffill(), .dropna()).
 * **Control Flow and Modularity:** Custom user-defined functions with parameters and return statements, for and while loops, and conditional logic (if/elif/else).
@@ -97,12 +102,18 @@ Some of the features include:
 ## Project Walkthrough
 
 * **Workspace Initialization:** Load core data manipulation and plotting libraries (pandas, numpy, matplotlib.pyplot).
+  
 * **Data Ingestion:** Establish dictionary mappings for quarterly files and extract TABLE 5C and TABLE 4 sheets into pandas DataFrames.
+  
 * **Data Cleaning and Standardization:** Isolate import records, forward-fill missing country codes, coerce text columns to proper case, and apply a mapping dictionary to unify country name variants.
+  
 * **Petroleum Filtering:** Filter rows by inspecting HS codes starting with string '27'.
+  
 * **Periodic Aggregation:** Group data by Year, Quarter, and Country of Origin to compute total quarterly spend and individual import values.
+  
 * **Concentration and Pareto Analytics:** Compute percentage market shares, rank trade partners, calculate quarterly HHI scores ($\sum S_i^2$), and generate cumulative Pareto curves.
-* **omparative Regional Evaluation:** Contrast global trade expenditure and concentration metrics against intra-African trade corridors under the AfCFTA framework
+  
+* **Comparative Regional Evaluation:** Contrast global trade expenditure and concentration metrics against intra-African trade corridors under the AfCFTA framework
 
 ## Program Screenshots
 
