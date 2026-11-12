@@ -28,6 +28,55 @@ The project relies on microdata extraction segments spanning six consecutive qua
 * **Sheets Extracted:** TABLE 4 and TABLE 5C detailing partner-specific trade and product classifications.
 * **Dataset Partitioning:** The data are bifurcated into a Global Petroleum Imports Dataset (capturing major international suppliers like the US, Netherlands, India, and UAE) and an Intra-African Trade Dataset (capturing continental partners like Angola, Togo, Ghana, and Libya).
 
-## Dataset Dictionary
+### Dataset Dictionary
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th>Field</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Code</code></td>
+      <td>String</td>
+      <td>Two-letter international standard country code representing partner origin (e.g., 'US', 'IN', 'NL')[cite: 9].</td>
+    </tr>
+    <tr>
+      <td><code>Country of Origin</code></td>
+      <td>String</td>
+      <td>Standardized name of the trading partner country (e.g., 'The United States of America', 'India')[cite: 9].</td>
+    </tr>
+    <tr>
+      <td><code>HS Code</code></td>
+      <td>String</td>
+      <td>Harmonized System commodity classification code, filtered for Chapter 27 (e.g., '2709000000', '2710192100')[cite: 9].</td>
+    </tr>
+    <tr>
+      <td><code>Products Description</code></td>
+      <td>String</td>
+      <td>Official descriptive text of the petroleum commodity imported (e.g., 'Petroleum and Bituminous oils', 'Gas oil')[cite: 9].</td>
+    </tr>
+    <tr>
+      <td><code>Import Value (Million Naira)</code></td>
+      <td>Float64</td>
+      <td>Monetary expenditure value of the imported product expressed in millions of Nigerian Naira[cite: 9].</td>
+    </tr>
+    <tr>
+      <td><code>Quarter</code></td>
+      <td>String</td>
+      <td>Temporal quarterly identifier ('Q1', 'Q2', 'Q3', 'Q4')[cite: 10].</td>
+    </tr>
+    <tr>
+      <td><code>Year</code></td>
+      <td>Integer</td>
+      <td>Calendar year of the import record (2025, 2026)[cite: 10].</td>
+    </tr>
+  </tbody>
+</table>
+
+---
 
 
