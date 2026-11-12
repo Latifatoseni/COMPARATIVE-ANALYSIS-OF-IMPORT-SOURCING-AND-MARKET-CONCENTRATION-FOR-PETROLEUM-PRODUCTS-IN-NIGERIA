@@ -115,6 +115,61 @@ Some of the features include:
   
 * **Comparative Regional Evaluation:** Contrast global trade expenditure and concentration metrics against intra-African trade corridors under the AfCFTA framework
 
+## Code Snippet
+### Stage 1: Data Ingestion
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+files = {
+    'Q1_2025': r'C:\Users\oseni\Downloads\Q1_2025_FTS.xlsx',
+    'Q2_2025': r'C:\Users\oseni\Downloads\Q2_2025_FTS.xlsx',
+    'Q3_2025': r'C:\Users\oseni\Downloads\Q3_2025_FTS.xlsx',
+    'Q4_2025': r'C:\Users\oseni\Downloads\Q4_2025_FTS.xlsx',
+    'Q1_2026': r'C:\Users\oseni\Downloads\Q1_2026_FTS.xlsx',
+    'Q2_2026': r'C:\Users\oseni\Downloads\Q2_2026_FTS.xlsx'
+}
+
+trade_data = {}
+for quarter, filepath in files.items():
+    trade_data[quarter] = {
+        'table_5c': pd.read_excel(filepath, sheet_name="TABLE 5C"),
+        'table_4': pd.read_excel(filepath, sheet_name="TABLE 4")
+    }
+
+```
+
+### Stage 2: Data Cleaning and HS Code Filtering
+
+```python
+def clean_table_5c_imports(df):
+    df_imports = df.iloc[4:36, 1:6].copy()
+    df_imports.columns = ["Code", "Country of Origin", "HS Code", "Products Description", "Import Value(Million Naira)"]
+    df_imports['Code'] = df_imports['Code'].ffill()
+    df_imports['Country of Origin'] = df_imports['Country of Origin'].ffill()
+    df_imports = df_imports.dropna(subset="HS Code")
+    return df_imports
+
+def filter_chapter_27_petroleum(df_imports):
+    df_imports['HS Code'] = df_imports['HS Code'].astype(str)
+    df_petroleum = df_imports[df_imports['HS Code'].str.startswith('27')].copy()
+    return df_petroleum
+```
+
+### HHI and Pareto Calculation
+
+```python
+# Calculate HHI Market Concentration Score
+hhi = ranked_market_share.groupby(['Year', 'Quarter'], as_index=False).agg(
+    HHI_Score=('Market Share (%)', lambda x: (x**2).sum())
+)
+
+# Calculate Cumulative Market Share (%)
+ranked_market_share['Cumulative Market Share (%)'] = ranked_market_share.groupby(['Year', 'Quarter'])['Market Share (%)'].cumsum()
+```
+
 ## Program Screenshots
 
 ![Program Walkthrough Screenshot](pro_1.png)
@@ -155,7 +210,45 @@ Some of the features include:
 ![Program Walkthrough Screenshot](pro_37.png)
 ![Program Walkthrough Screenshot](pro_38.png)
 
+## Visualization Description
 
+The analysis generates automated visual representations, including:
+* **Total Petroleum Import Spend per Quarter:** Illustrates macroeconomic expenditure fluctuations across 2025–2026.
+* **Total Import Spend by Country:** Ranks global trading partners by cumulative monetary volume.
+* **Quarterly Market Concentration Trend (HHI):** Tracks market power concentration against the 2,500 high-concentration benchmark line.
+* **Pareto Analysis of Import Partners:** Combines clustered columns and cumulative percentage lines to evaluate the 80/20 rule.
+* **Intra-African Trade Charts:** Maps regional spend trends, country rankings, and continental concentration curves under AfCFTA.
+  
+### Result
+
+From the analysis, the observed results include:
+* **Cumulative Global Spend:** Total global petroleum import spend across the monitored timeline reached ₦13.22 Trillion.
+* **Market Concentration:** Quarterly HHI scores ranged from 2,730.55 to 10,000, consistently breaching the 2,500 high-concentration threshold in every single monitored quarter.
+* **Dominant Sourcing:** The United States, the Netherlands, and India accounted for approximately 85% of total recorded global import expenditure.
+* **Intra-African Scale:** Cumulative intra-African petroleum trade registered at ₦1.87 Trillion (roughly 14% of global import spend), highlighting a significant scale gap.
+
+## Key Findings
+Based on our Results, here are the findings:
+
+* **Extreme Global Concentration:** Global import sourcing is heavily dominated by the United States, The Netherlands, and India, which together capture over 85% of total import value and adhere strictly to Pareto dominance rules.
+  
+* **The Regional Scale Gap:** Cumulative intra-African petroleum trade equals only about 28% of what the United States alone supplied. Continental infrastructure, cross-border pipeline connectivity, and regional refining deficits restrict immediate substitution.
+  
+* **Volatility in Regional Supply:** Intra-African trade fluctuates significantly by quarter, relying on rotating key suppliers such as Angola, Togo, Ghana, and Libya.
+
+## Limitations
+* The analysis relies strictly on monetary import spend values due to the unavailability of uniform physical quantity metrics across all reporting tables.
+  
+* The dataset spans a focused 2025–2026 quarterly window, capturing post-subsidy removal transition phases rather than multi-decade structural trends.
+  
+* Regional trade data reflects direct recorded customs transactions under HS Chapter 27, which may exclude informal cross-border fuel trade or unrecorded bunker supplies.
+
+## Conclusion
+The empirical evaluation of Nigeria's petroleum import dynamics across 2025 and 2026 highlights a persistent structural tension between immediate energy security demands and long-term macroeconomic resilience. Global imports operate on a multi-trillion-naira scale dominated by a narrow pool of external partners, exposing domestic supply chains to high HHI concentration and foreign exchange risks. Conversely, intra-African trade remains constrained by continental infrastructure bottlenecks, indicating that regional integration frameworks like the AfCFTA cannot instantaneously replace global imports. Nevertheless, they provide an indispensable strategic roadmap for future diversification, emphasizing that deliberate investments in domestic and regional refining infrastructure are vital to safeguarding Nigeria's long-term energy independence.
+
+## Author
+OSENI, Latifat Omolara
+DURU, Michael.
 
 
 
