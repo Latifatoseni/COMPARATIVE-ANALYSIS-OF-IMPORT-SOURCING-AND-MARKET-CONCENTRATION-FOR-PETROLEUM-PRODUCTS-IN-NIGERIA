@@ -221,7 +221,7 @@ The analysis generates automated visual representations, including:
 * **Pareto Analysis of Import Partners:** Combines clustered columns and cumulative percentage lines to evaluate the 80/20 rule.
 * **Intra-African Trade Charts:** Maps regional spend trends, country rankings, and continental concentration curves under AfCFTA.
   
-### Result
+## Result
 
 From the analysis, the observed results include:
 * **Cumulative Global Spend:** Total global petroleum import spend across the monitored timeline reached ₦13.22 Trillion.
@@ -249,7 +249,10 @@ Based on our Results, here are the findings:
 * Regional trade data reflects direct recorded customs transactions under HS Chapter 27, which may exclude informal cross-border fuel trade or unrecorded bunker supplies.
 
 ## Conclusion
-The empirical evaluation of Nigeria's petroleum import dynamics across 2025 and 2026 highlights a persistent structural tension between immediate energy security demands and long-term macroeconomic resilience. Global imports operate on a multi-trillion-naira scale dominated by a narrow pool of external partners, exposing domestic supply chains to high HHI concentration and foreign exchange risks. Conversely, intra-African trade remains constrained by continental infrastructure bottlenecks, indicating that regional integration frameworks like the AfCFTA cannot instantaneously replace global imports. Nevertheless, they provide an indispensable strategic roadmap for future diversification, emphasizing that deliberate investments in domestic and regional refining infrastructure are vital to safeguarding Nigeria's long-term energy independence.
+
+The empirical evaluation of Nigeria's petroleum import dynamics across 2025 and 2026 highlights a persistent structural tension between immediate energy security demands and long-term macroeconomic resilience. Global imports operate on a multi-trillion-naira scale dominated by a narrow pool of external partners, exposing domestic supply chains to high HHI concentration and foreign exchange risks. 
+
+Conversely, intra-African trade remains constrained by continental infrastructure bottlenecks, indicating that regional integration frameworks like the AfCFTA cannot instantaneously replace global imports. Nevertheless, they provide an indispensable strategic roadmap for future diversification, emphasizing that deliberate investments in domestic and regional refining infrastructure are vital to safeguarding Nigeria's long-term energy independence.
 
 ## Author
 ### OSENI, Latifat Omolara
