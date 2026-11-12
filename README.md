@@ -9,7 +9,9 @@ This repository contains a rigorous analytical evaluation of Nigeria's petroleum
 Nigeria's heavy reliance on imported refined and semi-refined petroleum products exposes its domestic economy to severe external vulnerabilities. These structural challenges manifest across three primary dimensions:
 
 * **Foreign Exchange Volatility:** Heavy demand for foreign currency (such as US Dollars) to settle large-scale fuel import bills exerts sustained downward pressure on the Nigerian Naira, fueling currency depreciation and inflationary pressures.
+  
 * **Logistical Vulnerabilities:** Dependence on long-haul maritime shipping exposes domestic supply chains to international freight rate fluctuations, global bunker fuel price volatility, and critical maritime choke points.
+  
 * **Acute Market Concentration Risk:** Import sourcing is heavily monopolized by a narrow pool of dominant trading partners. This hyper-concentration leaves domestic energy supplies highly vulnerable to single-source disruptions, sudden geopolitical tensions, and export restrictions imposed by supplying nations.
 
 ## Solution
@@ -223,8 +225,11 @@ The analysis generates automated visual representations, including:
 
 From the analysis, the observed results include:
 * **Cumulative Global Spend:** Total global petroleum import spend across the monitored timeline reached ₦13.22 Trillion.
+  
 * **Market Concentration:** Quarterly HHI scores ranged from 2,730.55 to 10,000, consistently breaching the 2,500 high-concentration threshold in every single monitored quarter.
+  
 * **Dominant Sourcing:** The United States, the Netherlands, and India accounted for approximately 85% of total recorded global import expenditure.
+  
 * **Intra-African Scale:** Cumulative intra-African petroleum trade registered at ₦1.87 Trillion (roughly 14% of global import spend), highlighting a significant scale gap.
 
 ## Key Findings
@@ -247,8 +252,8 @@ Based on our Results, here are the findings:
 The empirical evaluation of Nigeria's petroleum import dynamics across 2025 and 2026 highlights a persistent structural tension between immediate energy security demands and long-term macroeconomic resilience. Global imports operate on a multi-trillion-naira scale dominated by a narrow pool of external partners, exposing domestic supply chains to high HHI concentration and foreign exchange risks. Conversely, intra-African trade remains constrained by continental infrastructure bottlenecks, indicating that regional integration frameworks like the AfCFTA cannot instantaneously replace global imports. Nevertheless, they provide an indispensable strategic roadmap for future diversification, emphasizing that deliberate investments in domestic and regional refining infrastructure are vital to safeguarding Nigeria's long-term energy independence.
 
 ## Author
-OSENI, Latifat Omolara
-DURU, Michael.
+### OSENI, Latifat Omolara
+### DURU, Michael.
 
 
 
